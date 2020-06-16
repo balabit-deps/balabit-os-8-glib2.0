@@ -1,0 +1,7 @@
+# Lots of tests don't use libc functions
+libglib2.0-tests: hardening-no-fortify-functions usr/libexec/installed-tests/glib/*
+# Test data for content-type sniffing, never actually executed
+libglib2.0-tests: script-not-executable usr/libexec/installed-tests/glib/x-content/unix-software/autorun.sh
+libglib2.0-tests: shell-script-fails-syntax-check usr/libexec/installed-tests/glib/x-content/unix-software/autorun.sh
+# This is lorem ipsum in a test-case, nothing to do with the Debian Free Software Guidelines
+libglib2.0-tests: spelling-error-in-binary usr/libexec/installed-tests/glib/utf8-pointer dsfg dfsg
