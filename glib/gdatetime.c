@@ -935,9 +935,8 @@ g_date_time_new_from_unix (GTimeZone *tz,
  * time zone @tz.  The time is as accurate as the system allows, to a
  * maximum accuracy of 1 microsecond.
  *
- * This function will always succeed unless the system clock is set to
- * truly insane values (or unless GLib is still being used after the
- * year 9999).
+ * This function will always succeed unless GLib is still being used after the
+ * year 9999.
  *
  * You should release the return value by calling g_date_time_unref()
  * when you are done with it.
@@ -1033,7 +1032,8 @@ g_date_time_new_from_unix_local (gint64 t)
   GDateTime *datetime;
   GTimeZone *local;
 
-  if (t > G_MAXINT64 / USEC_PER_SECOND)
+  if (t > G_MAXINT64 / USEC_PER_SECOND ||
+      t < G_MININT64 / USEC_PER_SECOND)
     return NULL;
 
   local = g_time_zone_new_local ();
@@ -1068,7 +1068,8 @@ g_date_time_new_from_unix_utc (gint64 t)
   GDateTime *datetime;
   GTimeZone *utc;
 
-  if (t > G_MAXINT64 / USEC_PER_SECOND)
+  if (t > G_MAXINT64 / USEC_PER_SECOND ||
+      t < G_MININT64 / USEC_PER_SECOND)
     return NULL;
 
   utc = g_time_zone_new_utc ();
