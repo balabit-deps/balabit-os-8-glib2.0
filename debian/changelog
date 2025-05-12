@@ -1,3 +1,12 @@
+glib2.0 (2.64.6-1~ubuntu20.04.9) focal-security; urgency=medium
+
+  * SECURITY UPDATE: Integer Overflow
+    - debian/patches/CVE-2025-4373-1.patch: carefully handle gssize
+      in glib/gstring.c.
+    - CVE-2025-4373
+
+ -- Leonidas Da Silva Barbosa <leo.barbosa@canonical.com>  Mon, 12 May 2025 07:24:59 -0300
+
 glib2.0 (2.64.6-1~ubuntu20.04.8) focal-security; urgency=medium
 
   * SECURITY UPDATE: Buffer overflow

@@ -81,3 +81,4 @@ CVE-2024-34397/tests-Add-a-test-for-signal-filtering-by-well-known-name.patch
 CVE-2024-34397/tests-Ensure-that-unsubscribing-with-GetNameOwner-in-flig.patch
 CVE-2024-34397/gdbusconnection-regression.patch
 CVE-2024-52533.patch
+CVE-2025-4373-1.patch
